@@ -2,7 +2,7 @@
 
 name: workflow1
 on: 
-  workflow_dispatch
+  workflow_dispatch:
   push:
 
 jobs:
