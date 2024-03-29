@@ -2,7 +2,6 @@
 
 name:workflow1
 on:push
-
 jobs:
   job1:
     runs-on:ubuntu-latest
