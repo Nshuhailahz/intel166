@@ -10,8 +10,10 @@ env:
    lastname: "E"
 
 jobs:
-  job1:
-    runs-on: self-hosted
+  build:
+    runs-on: ubuntu-latest
+    continue-on-errors: true
+    environment: dev
     env:
       greetings: "hello Peeps"
     steps: 
