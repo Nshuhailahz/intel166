@@ -4,18 +4,45 @@ name: workflow1
 on: 
   workflow_dispatch:
   push:
+env:
+   greetings: "Good Morning"
+   name: "Sarah"
+   lastname: "E"
 
 jobs:
   job1:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
+    env:
+      greetings: "hello Peeps"
     steps: 
       - name: step1
         run: |
-          echo "good morning"
-          sleep 30
+          echo "$greetings ! from $name . $name created this file"
+        env:
+          name: Nur169
       - name: step2 for testing
         run: |
           cat /etc/os-release
-          sleep 30
+          hostname
+          echo "$greetings ! from $name"
+          touch /tmp/nur169
+          
 ## Name is not important in a step
       - run: uname -a
+      
+  job2:
+    runs-on: ubuntu-latest
+    env:
+      lastname: "zulkiflee"
+    steps: 
+     - name: step1
+       run: |
+          echo "$greetings ! from $name $lastname. $name created this file"
+       env:
+          name: Nur169
+     - name: step2 for testing
+       run: |
+          cat /etc/os-release
+          hostname
+          echo "$greetings ! from $name"
+          touch /tmp/Nur169
