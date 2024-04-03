@@ -83,6 +83,7 @@ test:
         env:
             name: Nur169
       - name: step2 for testing
+        if: github.event_name == 'push'
         run: |
           cat /etc/os-release
           sleep 5
